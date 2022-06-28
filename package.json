@@ -1,5 +1,5 @@
 {
-  "name": "one",
+  "name": "@hexlet/code",
   "version": "1.0.0",
   "description": "[![Actions Status](https://github.com/iFoxtrot33/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/iFoxtrot33/frontend-project-lvl2/actions)",
   "main": "index.js",
@@ -15,11 +15,16 @@
   "bugs": {
     "url": "https://github.com/iFoxtrot33/frontend-project-lvl2/issues"
   },
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
+  "type": "module",
   "homepage": "https://github.com/iFoxtrot33/frontend-project-lvl2#readme",
   "devDependencies": {
     "eslint": "^8.18.0"
   },
   "dependencies": {
+    "commander": "^9.3.0",
     "eslint-config-airbnb": "^19.0.4"
   }
 }
