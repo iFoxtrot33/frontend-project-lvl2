@@ -14,4 +14,4 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Run eslint
-        run: make make-lint
+        run: make lint
