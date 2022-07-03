@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 import { program } from "./../node_modules/commander/esm.mjs";
-import fs from 'fs';
 import findDiff from "./../index.js"
 const gendiff = (filepath1, filepath2) => findDiff(filepath1, filepath2);
 
@@ -15,3 +14,4 @@ program.parse(process.argv);
  
 // eslint-disable-next-line no-undef
 
+export default gendiff;

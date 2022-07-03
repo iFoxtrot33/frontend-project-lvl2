@@ -15,38 +15,35 @@ const findDiff = (path1, path2) => {
   const key1 = keys(file1);
   const key2 = keys(file2);
   const commonArr = union(key1, key2);
-  const temp = [];
-  const findD = commonArr.filter((key) => {
+  const diffArr = commonArr.reduce((acc, key) => {
     const one = file1[key];
     const two = file2[key];
     if (one === two) {
-      temp.push(`  ${key}:${two}`);
-      return `  ${key}:${two}`;
+      acc.push(`  ${key}:${two}`);
+      return acc;
     }
     if ((one !== two) && ( one !== undefined) && ( two !== undefined) ) {
-        temp.push(`- ${key}:${one}`);
-        temp.push(`+ ${key}:${two}`);
-        return `one`;
-    }
+        acc.push(`- ${key}:${one}`);
+        acc.push(`+ ${key}:${two}`);
+        return acc;
+   } 
     if ((one !== two) && ( one !== undefined)) {
-        temp.push(`- ${key}:${one}`);
-        return `one`;
+        acc.push(`- ${key}:${one}`);
+        return acc;
     }
     if ((one !== two) && ( two !== undefined)) {
-        temp.push(`+ ${key}:${two}`);
-        return `one`;
+        acc.push(`+ ${key}:${two}`);
+        return acc;
     }
+    return acc;
+  }, []);
+  const sortedResult = diffArr.sort((a,b) => a.charCodeAt(2)-b.charCodeAt(2))
+  const finalObj = sortedResult.reduce((acc, element) => {
+    const temp = element.split(':');
+    acc[temp[0]] = temp[1];
+    return acc
   }, {});
-  console.log(findD);
-  const sortedResult = temp.sort((a,b) => a.charCodeAt(2)-b.charCodeAt(2))
-  const final = {};
-  const makeObj = sortedResult.map((element) => {
-    const t = element.split(':');
-    final[t[0]] = t[1];
-  });
-  return final;
+  return  finalObj;
 };
-
-console.log(findDiff('fixtures/file1.json', 'fixtures/file2.json'));
 
 export default findDiff;
