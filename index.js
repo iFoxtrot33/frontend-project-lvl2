@@ -21,22 +21,23 @@ const findDiff = (path1, path2) => {
     const two = file2[key];
     if (one === two) {
       temp.push(`  ${key}:${two}`);
-      return temp;
+      return `  ${key}:${two}`;
     }
     if ((one !== two) && ( one !== undefined) && ( two !== undefined) ) {
         temp.push(`- ${key}:${one}`);
         temp.push(`+ ${key}:${two}`);
-        return temp;
+        return `one`;
     }
     if ((one !== two) && ( one !== undefined)) {
         temp.push(`- ${key}:${one}`);
-        return temp;
+        return `one`;
     }
     if ((one !== two) && ( two !== undefined)) {
         temp.push(`+ ${key}:${two}`);
-        return temp;
+        return `one`;
     }
   }, {});
+  console.log(findD);
   const sortedResult = temp.sort((a,b) => a.charCodeAt(2)-b.charCodeAt(2))
   const final = {};
   const makeObj = sortedResult.map((element) => {
@@ -45,5 +46,7 @@ const findDiff = (path1, path2) => {
   });
   return final;
 };
+
+console.log(findDiff('fixtures/file1.json', 'fixtures/file2.json'));
 
 export default findDiff;
