@@ -9,9 +9,9 @@ const readFile = (path) => fs.readFileSync(getFixturePath(path), 'utf-8');
 
 const file = (path) => JSON.parse(readFile(path));
 
-const findDiff = (path1, path2) => {
-  const file1 =  file(path1);
-  const file2 =  file(path2);
+export const findDiff = (filepath1, filepath2) => {
+  const file1 =  file(filepath1);
+  const file2 =  file(filepath2);
   const key1 = keys(file1);
   const key2 = keys(file2);
   const commonArr = union(key1, key2);
@@ -37,13 +37,13 @@ const findDiff = (path1, path2) => {
     }
     return acc;
   }, []);
+  const objKey = 0;
+  const objValue = 1;
   const sortedResult = diffArr.sort((a,b) => a.charCodeAt(2)-b.charCodeAt(2))
   const finalObj = sortedResult.reduce((acc, element) => {
     const temp = element.split(':');
-    acc[temp[0]] = temp[1];
+    acc[temp[objKey]] = temp[objValue];
     return acc
   }, {});
   return  finalObj;
 };
-
-export default findDiff;
