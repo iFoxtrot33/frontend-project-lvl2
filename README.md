@@ -8,7 +8,6 @@
 ![Linter workflow](https://github.com/iFoxtrot33/frontend-project-lvl2/actions/workflows/main.yml/badge.svg)
 
 ### Instructions
-## Type gendiff -h 
-for indormation
+Type gendiff -h for indormation
 ![help](pictures/1.png?raw=true "help info")
 ![help](pictures/2.png?raw=true "help info")
