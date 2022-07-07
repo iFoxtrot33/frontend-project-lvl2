@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1657155914380" clover="3.2.0">
-  <project timestamp="1657155914380" name="All files">
+<coverage generated="1657156347213" clover="3.2.0">
+  <project timestamp="1657156347214" name="All files">
     <metrics statements="49" coveredstatements="48" conditionals="16" coveredconditionals="15" methods="4" coveredmethods="4" elements="69" coveredelements="67" complexity="0" loc="49" ncloc="49" packages="1" files="1" classes="1"/>
     <file name="index.js" path="/home/iurii/hexlet/frontend-project-lvl2/index.js">
       <metrics statements="49" coveredstatements="48" conditionals="16" coveredconditionals="15" methods="4" coveredmethods="4"/>
