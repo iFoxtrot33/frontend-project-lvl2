@@ -5,5 +5,4 @@ gendiff:
 test:
 	npm test
 install: 
-    install-deps
 	npx simple-git-hooks
