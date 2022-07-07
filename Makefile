@@ -13,11 +13,11 @@ test:
 test-coverage:
 	npm test -- --coverage --coverageProvider=v8
 
-lint:
-	npx eslint .
-
 publish:
 	npm publish
 
 gendiff:
 	node bin/gendiff.js
+
+lint:
+	npx eslint .
