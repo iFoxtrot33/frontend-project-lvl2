@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "commander": "^9.3.0",
-    "eslint-config-airbnb": "^19.0.4"
+    "eslint-config-airbnb": "^19.0.4",
+    "simple-git-hooks": "^2.8.0"
   }
 }
