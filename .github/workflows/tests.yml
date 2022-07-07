@@ -1,6 +1,6 @@
 name: Tests   
 
-oon:
+on:
   - push
   - pull_request
 
