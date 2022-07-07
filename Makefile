@@ -1,7 +1,5 @@
 install:
 	npx simple-git-hooks
-install-deps:
-	npm ci
 lint:
 	npx eslint .
 gendiff:
