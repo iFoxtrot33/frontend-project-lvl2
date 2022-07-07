@@ -8,6 +8,9 @@
 ### Linter status:
 ![Linter workflow](https://github.com/iFoxtrot33/frontend-project-lvl2/actions/workflows/main.yml/badge.svg)
 
+### Linter status:
+![Tests workflow](https://github.com/iFoxtrot33/frontend-project-lvl2/actions/workflows/tests.yml/badge.svg)
+
 ### Instructions:
 Type gendiff -h for information
 
