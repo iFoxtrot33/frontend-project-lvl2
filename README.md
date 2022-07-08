@@ -13,3 +13,9 @@
 Type gendiff -h for information
 
 ![help](pictures/2.png?raw=true "help info")
+
+Type gendiff filePathName1 filePathName2 
+To find difference between files. Only files json, yaml, yml are supported.
+
+![Sample](pictures/3.png?raw=true "Sample")
+
