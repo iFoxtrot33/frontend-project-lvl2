@@ -60,3 +60,5 @@ export const findDiff = (filepath1, filepath2) => {
   }, {});
   return  finalObj;
 };
+
+console.log(findDiff('__fixtures__/file11.json','__fixtures__/file22.json'));
