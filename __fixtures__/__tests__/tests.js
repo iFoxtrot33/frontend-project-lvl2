@@ -1,6 +1,5 @@
 import { test, expect } from '@jest/globals';
 import { findDiff  } from "./../../index.js"
-import { findDiff2  } from "./../../index2.js"
 
 test('1st test - json & json', () => {
 expect(findDiff('__fixtures__/file1.json', '__fixtures__/file2.json' )).toEqual({

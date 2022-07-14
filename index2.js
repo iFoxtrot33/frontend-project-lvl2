@@ -51,4 +51,5 @@ const findDiff = (file1, file2) => {
   };
 
   
+// eslint-disable-next-line no-undef
 console.log(findDiff(parseFile('__fixtures__/file1.json'),parseFile('__fixtures__/file2.json')));
