@@ -1,13 +1,8 @@
-
-import keys from './../node_modules/lodash/keys.js';
-import union from './../node_modules/lodash/union.js';
 import _ from 'lodash';
 
 const findDiff = (file1, file2) => {
-    const key1 = keys(file1);
-    const key2 = keys(file2);
-     const commonKeys = union(key1, key2);
-    const sortedKeys = _.sortBy(commonKeys);
+    const keyss = Object.keys({ ...file1, ...file2 });
+    const sortedKeys = _.sortBy(keyss);
     const tree = sortedKeys.map((key) => {
       const value1 = file1[key];
       const value2 = file2[key];
