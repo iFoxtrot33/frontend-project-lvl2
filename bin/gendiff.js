@@ -26,4 +26,4 @@ program
 // eslint-disable-next-line no-undef
 program.parse();
 
-
+export default program;
