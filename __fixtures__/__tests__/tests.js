@@ -14,6 +14,7 @@ const plainObject =
   + verbose: true
 }`
 
+const jsonFormat = `[{"type":"remove","key":"follow","val":false},{"type":"same","key":"host","val":"hexlet.io"},{"type":"remove","key":"proxy","val":"123.234.53.22"},{"type":"updated","key":"timeout","val1":50,"val2":20},{"type":"add","key":"verbose","val":true}]`
 
 test('1st test - json & json', () => {
 expect(formatter(findDiff(parseFile('./__fixtures__/file1.json'), parseFile('./__fixtures__/file2.json' )))).toEqual( `{
@@ -99,3 +100,7 @@ Property 'group3' was added with value: [complex value]
 `
     expect(formatPlain(findDiff(parseFile('./__fixtures__/file1.json'), parseFile('./__fixtures__/file2.json' )))).toEqual(result);
 });
+
+test('8th test - json & json / in json format ', () => {
+  expect(JSON.stringify(findDiff(parseFile('./__fixtures__/file3.json'), parseFile('./__fixtures__/file4.json' )))).toEqual(jsonFormat);
+  });

@@ -10,14 +10,17 @@ program
  .description('Compares two configuration files and shows a difference.')
  .version('0.0.1')
  .option('-f, --format <type>', 'output format')
- .arguments('<filepath1> <filepath2> <formatName>')
- .action((filepath1, filepath2, format) => {
+ .arguments('<formatName> <filepath1> <filepath2>')
+ .action((format, filepath1, filepath2) => {
   if (format === 'plain') {
   // eslint-disable-next-line no-undef
   console.log(formatPlain(findDiff(parseFile(filepath1), parseFile(filepath2))));
-  } else {
+  } else if (format === 'tree') {
   // eslint-disable-next-line no-undef
   console.log(formatter(findDiff(parseFile(filepath1), parseFile(filepath2))))
+  } else if (format === "json") {
+    // eslint-disable-next-line no-undef
+    console.log(JSON.stringify(findDiff(parseFile(filepath1), parseFile(filepath2))))
   }
  });
 // eslint-disable-next-line no-undef
