@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// @ts-ignore
 import { program } from "./../node_modules/commander/esm.mjs";
 import  findDiff   from "./../src/index.js"
 import { parseFile } from "./../src/parser.js"
