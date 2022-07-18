@@ -24,5 +24,5 @@ tree filePathName1 filePathName2
 ![Sample](pictures/3.png?raw=true "Sample")
 
 json filePathName1 filePathName2 
-![Sample](pictures/3.png?raw=true "Sample")
+![Sample](pictures/4.png?raw=true "Sample")
 
