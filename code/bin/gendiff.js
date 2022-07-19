@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 // @ts-ignore
-import { program } from "./../../node_modules/commander/esm.mjs";
-import  findDiff   from "./../../src/index.js"
-import { parseFile } from "./../../src/parser.js"
-import { formatter} from "./../../src/stylish.js"
-import { formatPlain } from "./../../src/formatters/plain.js"
+import { program } from "./../node_modules/commander/esm.mjs";
+import  findDiff   from "./../src/index.js"
+import { parseFile } from "./../src/parser.js"
+import { formatter} from "./../src/stylish.js"
+import { formatPlain } from "./../src/formatters/plain.js"
 
 program
  .name('gendiff')
