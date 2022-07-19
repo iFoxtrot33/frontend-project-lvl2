@@ -19,13 +19,13 @@ program
   console.log(formatPlain(findDiff(parseFile(filepath1), parseFile(filepath2))));
   } else if (format === 'tree') {
   // eslint-disable-next-line no-undef
-  console.log(formatter(findDiff(parseFile(filepath1), parseFile(filepath2))))
+  console.log(formatter(findDiff(parseFile(filepath1), parseFile(filepath2))));
   } else if (format === "json") {
-    // eslint-disable-next-line no-undef
-    console.log(JSON.stringify(findDiff(parseFile(filepath1), parseFile(filepath2))))
+  // eslint-disable-next-line no-undef
+  console.log(JSON.stringify(findDiff(parseFile(filepath1), parseFile(filepath2))));
   }
  });
-// eslint-disable-next-line no-undef
+
 program.parse();
 
 export default program;
