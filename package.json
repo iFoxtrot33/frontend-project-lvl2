@@ -16,7 +16,7 @@
     "url": "https://github.com/iFoxtrot33/frontend-project-lvl2/issues"
   },
   "bin": {
-    "gendiff": "bin/gendiff.js"
+    "gendiff": "index.js"
   },
   "simple-git-hooks": {
     "pre-push": "make lint"

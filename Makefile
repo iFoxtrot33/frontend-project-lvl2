@@ -17,7 +17,7 @@ publish:
 	npm publish
 
 gendiff:
-	node bin/gendiff.js
+	index.js
 
 lint:
 	npx eslint .
