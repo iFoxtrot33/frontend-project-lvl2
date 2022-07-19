@@ -1,5 +1,5 @@
 // @ts-check
 
-import diff from './code/bin/gendiff.js';
+import diff from './bin/gendiff.js';
 
 export default diff;
