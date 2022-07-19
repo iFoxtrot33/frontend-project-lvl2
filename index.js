@@ -26,4 +26,6 @@ program
   }
  });
 
-program.parse();
+ program.parse();
+
+ export default program;
