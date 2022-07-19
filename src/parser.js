@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import process from 'process';
-import last from './../node_modules/lodash/last.js';
+import last from 'lodash/last.js';
 import yaml from 'js-yaml';
 
 
