@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { program } from "./node_modules/commander/esm.mjs"
+import { program } from "./node_modules/commander/index.js"
 import  findDiff   from "./src/index.js"
 import { parseFile } from "./src/parser.js"
 import { formatter} from "./src/stylish.js"
