@@ -1,8 +1,5 @@
 import { test, expect } from '@jest/globals';
-import  findDiff   from "./../../src/index.js"
-import { parseFile } from "./../../src/parser.js"
-import { formatter} from "./../../src/stylish.js"
-import { formatPlain } from "./../../src/formatters/plain.js"
+import  findDifference   from "./../../src/index.js"
 
 const plainObject = 
 `{
@@ -17,7 +14,7 @@ const plainObject =
 const jsonFormat = `[{"type":"remove","key":"follow","val":false},{"type":"same","key":"host","val":"hexlet.io"},{"type":"remove","key":"proxy","val":"123.234.53.22"},{"type":"updated","key":"timeout","val1":50,"val2":20},{"type":"add","key":"verbose","val":true}]`
 
 test('1st test - json & json', () => {
-expect(formatter(findDiff(parseFile('./__fixtures__/file1.json'), parseFile('./__fixtures__/file2.json' )))).toEqual( `{
+expect(findDifference('stylish','./__fixtures__/file1.json', './__fixtures__/file2.json' )).toEqual( `{
     common: {
       + follow: false
         setting1: Value 1
@@ -64,24 +61,24 @@ expect(formatter(findDiff(parseFile('./__fixtures__/file1.json'), parseFile('./_
 });
 
 test('2nd test - yaml & yaml ', () => {
-    expect(formatter(findDiff(parseFile('./__fixtures__/file1.yaml'), parseFile('./__fixtures__/file2.yaml' )))).toEqual(plainObject);
+    expect(findDifference('stylish','./__fixtures__/file1.yaml', './__fixtures__/file2.yaml' )).toEqual(plainObject);
     });
 
 test('2rd test - yml & yml ', () => {
-    expect(formatter(findDiff(parseFile('./__fixtures__/file1.yml'), parseFile('./__fixtures__/file2.yml' )))).toEqual(plainObject);
+    expect(findDifference('stylish','./__fixtures__/file1.yml', './__fixtures__/file2.yml' )).toEqual(plainObject);
     });
 
 
 test('4th test - yaml & yml ', () => {
-    expect(formatter(findDiff(parseFile('./__fixtures__/file1.yaml'), parseFile('./__fixtures__/file2.yml' )))).toEqual(plainObject);
+    expect(findDifference('stylish','./__fixtures__/file1.yaml', './__fixtures__/file2.yml' )).toEqual(plainObject);
     });
 
 test('5th test - json & yaml ', () => {
-    expect(formatter(findDiff(parseFile('./__fixtures__/file3.json'), parseFile('./__fixtures__/file2.yaml' )))).toEqual(plainObject);
+    expect(findDifference('stylish','./__fixtures__/file3.json', './__fixtures__/file2.yaml' )).toEqual(plainObject);
     });
 
 test('6th test - json & yml ', () => {
-    expect(formatter(findDiff(parseFile('./__fixtures__/file3.json'), parseFile('./__fixtures__/file2.yml' )))).toEqual(plainObject);
+    expect(findDifference('stylish','./__fixtures__/file3.json', './__fixtures__/file2.yml' )).toEqual(plainObject);
     });     
 
 test('7th test - json & json / plain format', () => {
@@ -98,9 +95,9 @@ Property 'group1.nest' was updated. From [complex value] to 'str'
 Property 'group2' was removed
 Property 'group3' was added with value: [complex value]
 `
-    expect(formatPlain(findDiff(parseFile('./__fixtures__/file1.json'), parseFile('./__fixtures__/file2.json' )))).toEqual(result);
+    expect(findDifference('plain','./__fixtures__/file1.json', './__fixtures__/file2.json' )).toEqual(result);
 });
 
 test('8th test - json & json / in json format ', () => {
-  expect(JSON.stringify(findDiff(parseFile('./__fixtures__/file3.json'), parseFile('./__fixtures__/file4.json' )))).toEqual(jsonFormat);
+  expect(findDifference('json','./__fixtures__/file3.json', './__fixtures__/file4.json' )).toEqual(jsonFormat);
   });

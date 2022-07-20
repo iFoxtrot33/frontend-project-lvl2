@@ -1,28 +1,18 @@
-import _ from 'lodash';
+import { formatter} from "./stylish.js"
+import { formatPlain } from "./formatters/plain.js"
+import  buildTree  from "./treeBuilder.js"
+import { parseFile } from './parser.js'
 
-const findDiff = (file1, file2) => {
-    const keyss = Object.keys({ ...file1, ...file2 });
-    const sortedKeys = _.sortBy(keyss);
-    const tree = sortedKeys.map((key) => {
-      const value1 = file1[key];
-      const value2 = file2[key];
-      if (!_.has(file1, key)) {
-        return { type: 'add', key, val: value2 };
-      }
-      if (!_.has(file2, key)) {
-        return { type: 'remove', key, val: value1 };
-      }
-      if (_.isPlainObject(value1) && _.isPlainObject(value2)) {
-        return { type: 'recursion', key, children: findDiff(value1, value2) };
-      }
-      if (!_.isEqual(value1, value2)) {
-        return {
-          type: 'updated', key, val1: value1, val2: value2,
-        };
-      }
-      return { type: 'same', key, val: value1 };
-    });
-    return tree;
-  };
+const findDifference = (format, filepath1, filepath2) => {
+  const tree = buildTree(parseFile(filepath1), parseFile(filepath2));
+  switch(format) {
+    case 'stylish':
+      return formatter(tree);
+    case 'plain':
+      return formatPlain(tree);
+    case 'json':
+      return JSON.stringify(tree);
+  }
+};
 
-  export default findDiff;
+export default findDifference;
