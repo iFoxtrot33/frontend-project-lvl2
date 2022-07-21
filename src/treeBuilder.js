@@ -25,4 +25,5 @@ const buildTree = (file1, file2) => {
     return tree;
   };
 
+  
   export default buildTree;
