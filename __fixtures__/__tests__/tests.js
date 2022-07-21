@@ -14,7 +14,7 @@ const plainObject =
 const jsonFormat = `[{"type":"remove","key":"follow","val":false},{"type":"same","key":"host","val":"hexlet.io"},{"type":"remove","key":"proxy","val":"123.234.53.22"},{"type":"updated","key":"timeout","val1":50,"val2":20},{"type":"add","key":"verbose","val":true}]`
 
 test('1st test - json & json', () => {
-expect(findDifference('stylish','./__fixtures__/file1.json', './__fixtures__/file2.json' )).toEqual( `{
+expect(findDifference('file1.json', 'file2.json','stylish')).toEqual( `{
     common: {
       + follow: false
         setting1: Value 1
@@ -61,24 +61,24 @@ expect(findDifference('stylish','./__fixtures__/file1.json', './__fixtures__/fil
 });
 
 test('2nd test - yaml & yaml ', () => {
-    expect(findDifference('stylish','./__fixtures__/file1.yaml', './__fixtures__/file2.yaml' )).toEqual(plainObject);
+    expect(findDifference('file1.yaml', 'file2.yaml','stylish')).toEqual(plainObject);
     });
 
 test('2rd test - yml & yml ', () => {
-    expect(findDifference('stylish','./__fixtures__/file1.yml', './__fixtures__/file2.yml' )).toEqual(plainObject);
+    expect(findDifference('file1.yml', 'file2.yml','stylish')).toEqual(plainObject);
     });
 
 
 test('4th test - yaml & yml ', () => {
-    expect(findDifference('stylish','./__fixtures__/file1.yaml', './__fixtures__/file2.yml' )).toEqual(plainObject);
+    expect(findDifference('file1.yaml', 'file2.yml','stylish')).toEqual(plainObject);
     });
 
 test('5th test - json & yaml ', () => {
-    expect(findDifference('stylish','./__fixtures__/file3.json', './__fixtures__/file2.yaml' )).toEqual(plainObject);
+    expect(findDifference('file3.json', 'file2.yaml','stylish')).toEqual(plainObject);
     });
 
 test('6th test - json & yml ', () => {
-    expect(findDifference('stylish','./__fixtures__/file3.json', './__fixtures__/file2.yml' )).toEqual(plainObject);
+    expect(findDifference('file3.json', 'file2.yml','stylish')).toEqual(plainObject);
     });     
 
 test('7th test - json & json / plain format', () => {
@@ -95,9 +95,9 @@ Property 'group1.nest' was updated. From [complex value] to 'str'
 Property 'group2' was removed
 Property 'group3' was added with value: [complex value]
 `
-    expect(findDifference('plain','./__fixtures__/file1.json', './__fixtures__/file2.json' )).toEqual(result);
+    expect(findDifference('file1.json', 'file2.json','plain')).toEqual(result);
 });
 
 test('8th test - json & json / in json format ', () => {
-  expect(findDifference('json','./__fixtures__/file3.json', './__fixtures__/file4.json' )).toEqual(jsonFormat);
+  expect(findDifference('file3.json', 'file4.json','json')).toEqual(jsonFormat);
   });

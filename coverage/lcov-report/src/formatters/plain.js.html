@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">17.85% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/28</span>
+                <span class='fraction'>28/28</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">17.85% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/28</span>
+                <span class='fraction'>28/28</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -95,60 +95,60 @@
 <a name='L30'></a><a href='#L30'>30</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">13x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import _ from 'lodash';
 &nbsp;
-const isComplex = (<span class="fstat-no" title="function not covered" >val) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (_.isPlainObject(val) === true) {</span>
-<span class="cstat-no" title="statement not covered" >        return '[complex value]';</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if ((val === true) || (val === false) || (val === null)) {</span>
-<span class="cstat-no" title="statement not covered" >        return val;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return `'${val}'`;</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+const isComplex = (val) =&gt; {
+    if (_.isPlainObject(val) === true) {
+        return '[complex value]';
+    }
+    if ((val === true) || (val === false) || (val === null)) {
+        return val;
+    }
+    return `'${val}'`;
+};
 &nbsp;
-export const formatPlain = (<span class="fstat-no" title="function not covered" >obj) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    const iter = (tree, parent) =&gt; tree.map((node) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        const path = [...parent, node.key].join('.');</span>
-<span class="cstat-no" title="statement not covered" >    switch(node.type) {</span>
-<span class="cstat-no" title="statement not covered" >        case 'add':</span>
-<span class="cstat-no" title="statement not covered" >            return `Property '${path}' was added with value: ${isComplex(node.val)}\n`;</span>
-<span class="cstat-no" title="statement not covered" >        case 'remove':</span>
-<span class="cstat-no" title="statement not covered" >            return `Property '${path}' was removed\n`;</span>
-<span class="cstat-no" title="statement not covered" >        case 'updated':</span>
-<span class="cstat-no" title="statement not covered" >            return `Property '${path}' was updated. From ${isComplex(node.val1)} to ${isComplex(node.val2)}\n`;</span>
-<span class="cstat-no" title="statement not covered" >        case 'recursion':</span>
-<span class="cstat-no" title="statement not covered" >            return `${iter(node.children, [path]).join('')}`;</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >   });</span>
-<span class="cstat-no" title="statement not covered" >   return `${iter(obj, []).join('')}`;</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+export const formatPlain = (obj) =&gt; {
+    const iter = (tree, parent) =&gt; tree.map((node) =&gt; {
+        const path = [...parent, node.key].join('.');
+    switch(node.type) {
+        case 'add':
+            return `Property '${path}' was added with value: ${isComplex(node.val)}\n`;
+        case 'remove':
+            return `Property '${path}' was removed\n`;
+        case 'updated':
+            return `Property '${path}' was updated. From ${isComplex(node.val1)} to ${isComplex(node.val2)}\n`;
+        case 'recursion':
+            return `${iter(node.children, [path]).join('')}`;
+    }
+   });
+   return `${iter(obj, []).join('')}`;
+};
 &nbsp;
 &nbsp;</pre></td></tr></table></pre>
 
@@ -157,7 +157,7 @@ export const formatPlain = (<span class="fstat-no" title="function not covered" 
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Wed Jul 20 2022 07:40:49 GMT+0300 (Eastern European Summer Time)
+                at Thu Jul 21 2022 05:44:14 GMT+0300 (Eastern European Summer Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>
