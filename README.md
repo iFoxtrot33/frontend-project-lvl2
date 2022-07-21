@@ -14,15 +14,18 @@ Type gendiff -h for information
 
 ![help](pictures/1.png?raw=true "help info")
 
-Type gendiff format filePathName1 filePathName2 
+Type gendiff -f filePathName1 filePathName2 
 To find difference between files. Only files json, yaml, yml are supported.
 
-plain filePathName1 filePathName2 
+To receive tree, type:
+gendiff filePathName1 filePathName2 
 ![Sample](pictures/2.png?raw=true "Sample")
 
-tree filePathName1 filePathName2 
+To receive plain structure, type:
+-f plain filePathName1 filePathName2 
 ![Sample](pictures/3.png?raw=true "Sample")
 
-json filePathName1 filePathName2 
+To receive string, type:
+-f json filePathName1 filePathName2 
 ![Sample](pictures/4.png?raw=true "Sample")
 
