@@ -28,7 +28,7 @@ export const formatter = (obj) => {
         case 'updated':
           return `${takeValue(node.val1, '-')}${takeValue(node.val2, '+')}`;
         case 'recursion':
-          return `${gapMaker(depth)}  ${node.key}: {\n${iter(node.children, depth + 1).join('')} ${gapMaker(depth)}}`;
+          return `${gapMaker(depth)}  ${node.key}: {\n${iter(node.children, depth + 1).join('')} ${gapMaker(depth)}} \n`;
         }
     });
     return `{\n${iter(obj, 1).join('')}}`;
