@@ -4,11 +4,12 @@ const isComplex = (val) => {
     if (_.isPlainObject(val) === true) {
         return '[complex value]';
     }
-    if ((val === true) || (val === false) || (val === null)) {
+    if ((val === true) || (val === false) || (val === null) || (typeof val === 'number')) {
         return val;
     }
     return `'${val}'`;
 };
+
 
 export const formatPlain = (obj) => {
     const iter = (tree, parent) => tree.map((node) => {
