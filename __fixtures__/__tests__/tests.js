@@ -27,13 +27,13 @@ expect(findDifference('file1.json', 'file2.json','stylish')).toEqual( `{
         }
         setting6: {
             doge: {
-              - wow: 
+              - wow:
               + wow: so much
-           }
+            }
             key: value
           + ops: vops
-       }
-   }
+        }
+    }
     group1: {
       - baz: bas
       + baz: bars
@@ -42,7 +42,7 @@ expect(findDifference('file1.json', 'file2.json','stylish')).toEqual( `{
             key: value
         }
       + nest: str
-   }
+    }
   - group2: {
         abc: 12345
         deep: {
