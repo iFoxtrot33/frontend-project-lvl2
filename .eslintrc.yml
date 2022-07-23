@@ -4,7 +4,7 @@ env:
   node: true
 
 extends:
-  - 'eslint-config-airbnb-base'
+  - 'eslint-config-airbnb'
   - 'plugin:jest/recommended'
 
 parserOptions:
