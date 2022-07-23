@@ -25,6 +25,13 @@ export const formatPlain = (obj) => {
             return `${iter(node.children, [path]).join('')}`;
     }
    });
-   return `${iter(obj, []).join('')}`;
+   const result = `${iter(obj, []).join('')}`;
+   const finalResult = result.split('');
+   const answer = finalResult.filter((elements, index) => {
+    if (index < finalResult.length - 1) {
+        return elements;
+    } 
+   },[]); 
+   return answer.join('');
 };
 
