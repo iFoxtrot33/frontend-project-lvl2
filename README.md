@@ -12,20 +12,21 @@
 ### Instructions:
 Type gendiff -h for information
 
-![help](pictures/1.png?raw=true "help info")
+![help](https://user-images.githubusercontent.com/102408798/180901956-9ee193d5-1fb4-4e5b-9174-afcf2c80d671.png)
 
 Type gendiff -f filePathName1 filePathName2 
 To find difference between files. Only files json, yaml, yml are supported.
 
 To receive tree, type:
 gendiff filePathName1 filePathName2 
-![Sample](pictures/2.png?raw=true "Sample")
+![Sample]![2](https://user-images.githubusercontent.com/102408798/180902044-32c64884-679e-42e9-91b4-dd8721584170.png)
+
 
 To receive plain structure, type:
 -f plain filePathName1 filePathName2 
-![Sample](pictures/3.png?raw=true "Sample")
+![Sample](https://user-images.githubusercontent.com/102408798/180902084-01e0704d-837c-43c9-bfe8-c040ee42586e.png)
 
 To receive string, type:
 -f json filePathName1 filePathName2 
-![Sample](pictures/4.png?raw=true "Sample")
+![Sample](https://user-images.githubusercontent.com/102408798/180902114-984c29e4-bc5d-415f-84ef-5ee7784dc660.png)
 
