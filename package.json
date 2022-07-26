@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "Find difference between two files. Check README for instructions.",
+  "description": "Find difference between two files. Check README for the instructions.",
   "main": "src/index.js",
   "scripts": {
     "test": "npx jest"
