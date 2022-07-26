@@ -19,7 +19,7 @@ To find difference between files. Only files json, yaml, yml are supported.
 
 To receive tree, type:
 gendiff filePathName1 filePathName2 
-![Sample]![2](https://user-images.githubusercontent.com/102408798/180902044-32c64884-679e-42e9-91b4-dd8721584170.png)
+![Sample](https://user-images.githubusercontent.com/102408798/180902044-32c64884-679e-42e9-91b4-dd8721584170.png)
 
 
 To receive plain structure, type:
