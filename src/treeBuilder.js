@@ -4,23 +4,21 @@ const buildTree = (file1, file2) => {
   const keyss = Object.keys({ ...file1, ...file2 });
   const sortedKeys = _.sortBy(keyss);
   const tree = sortedKeys.map((key) => {
-    const value1 = file1[key];
-    const value2 = file2[key];
     if (!_.has(file1, key)) {
-      return { type: 'add', key, val: value2 };
+      return { type: 'add', key, val: file2[key] };
     }
     if (!_.has(file2, key)) {
-      return { type: 'remove', key, val: value1 };
+      return { type: 'remove', key, val: file1[key] };
     }
-    if (_.isPlainObject(value1) && _.isPlainObject(value2)) {
-      return { type: 'recursion', key, children: buildTree(value1, value2) };
+    if (_.isPlainObject(file1[key]) && _.isPlainObject(file2[key])) {
+      return { type: 'nested', key, children: buildTree(file1[key], file2[key]) };
     }
-    if (!_.isEqual(value1, value2)) {
+    if (!_.isEqual(file1[key], file2[key])) {
       return {
-        type: 'updated', key, val1: value1, val2: value2,
+        type: 'updated', key, val1: file1[key], val2: file2[key],
       };
     }
-    return { type: 'same', key, val: value1 };
+    return { type: 'notUpdated', key, val: file1[key] };
   });
   return tree;
 };

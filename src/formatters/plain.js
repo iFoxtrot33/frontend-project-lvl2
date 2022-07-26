@@ -24,7 +24,7 @@ export const formatPlain = (obj) => {
         return `Property '${path}' was removed\n`;
       case 'updated':
         return `Property '${path}' was updated. From ${isComplex(node.val1)} to ${isComplex(node.val2)}\n`;
-      case 'recursion':
+      case 'nested':
         return `${iter(node.children, [path]).join('')}`;
     }
   });

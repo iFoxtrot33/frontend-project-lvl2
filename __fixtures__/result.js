@@ -65,4 +65,4 @@ export const stylishResult = `{
     }
 }`;
 
-export const jsonFormat = '[{"type":"remove","key":"follow","val":false},{"type":"same","key":"host","val":"hexlet.io"},{"type":"remove","key":"proxy","val":"123.234.53.22"},{"type":"updated","key":"timeout","val1":50,"val2":20},{"type":"add","key":"verbose","val":true}]';
+export const jsonFormat = '[{"type":"remove","key":"follow","val":false},{"type":"notUpdated","key":"host","val":"hexlet.io"},{"type":"remove","key":"proxy","val":"123.234.53.22"},{"type":"updated","key":"timeout","val1":50,"val2":20},{"type":"add","key":"verbose","val":true}]';
