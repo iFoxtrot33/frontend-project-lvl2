@@ -1,14 +1,14 @@
 /* eslint-disable import/named */
 /* eslint-disable jest/valid-title */
 import { test, expect } from '@jest/globals';
-import findDifference from '../../src/index.js';
+import findDifference from '../src/index.js';
 import {
   stylishResult,
   plainObject,
   jsonFormat,
   resultLines,
-} from '../result.js';
-import { getFixturePath } from '../../src/parser.js';
+} from '../__fixtures__/result.js';
+import { getFixturePath } from '../src/parser.js';
 
 test.each([
   ['file1.json', 'file2.json', 'stylish', stylishResult],

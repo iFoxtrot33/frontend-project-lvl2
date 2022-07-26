@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 export const getTruePath = (filename) => path.resolve(process.cwd(), filename);
-export const getFixturePath = (filename) => path.resolve(__dirname, '..', '__fixtures__', filename);
+export const getFixturePath = (filename) => path.resolve(__dirname, './..', '__fixtures__', filename);
 
 // eslint-disable-next-line import/prefer-default-export
 export const parseFile = (filePath) => {
