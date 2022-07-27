@@ -1,5 +1,5 @@
 import { formatter } from './formatters/stylish.js';
-import { formatPlain } from './formatters/plain.js';
+import formatPlain from './formatters/plain.js';
 
 const choseFormatter = (format, tree) => {
   switch (format) {

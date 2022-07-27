@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 export const plainObject = `{
   - follow: false
     host: hexlet.io

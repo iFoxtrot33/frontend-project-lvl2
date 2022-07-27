@@ -1,5 +1,3 @@
-/* eslint-disable import/named */
-/* eslint-disable jest/valid-title */
 import { test, expect } from '@jest/globals';
 import findDifference from '../src/index.js';
 import {

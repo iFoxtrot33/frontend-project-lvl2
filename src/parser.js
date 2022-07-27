@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import fs from 'fs';
 import path, { dirname } from 'path';
 import yaml from 'js-yaml';
@@ -10,7 +9,6 @@ const __dirname = dirname(__filename);
 export const getTruePath = (filename) => path.resolve(process.cwd(), filename);
 export const getFixturePath = (filename) => path.resolve(__dirname, './..', '__fixtures__', filename);
 
-// eslint-disable-next-line import/prefer-default-export
 export const parseFile = (filePath) => {
   const data = fs.readFileSync(filePath, 'utf-8');
   const fileExtension = path.extname(filePath);

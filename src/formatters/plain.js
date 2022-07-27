@@ -1,6 +1,3 @@
-/* eslint-disable default-case */
-/* eslint-disable array-callback-return */
-/* eslint-disable consistent-return */
 import _ from 'lodash';
 
 const isComplex = (val) => {
@@ -13,8 +10,7 @@ const isComplex = (val) => {
   return `'${val}'`;
 };
 
-// eslint-disable-next-line import/prefer-default-export
-export const formatPlain = (obj) => {
+const formatPlain = (obj) => {
   const iter = (tree, parent) => tree.map((node) => {
     const path = [...parent, node.key].join('.');
     switch (node.type) {
@@ -26,6 +22,10 @@ export const formatPlain = (obj) => {
         return `Property '${path}' was updated. From ${isComplex(node.val1)} to ${isComplex(node.val2)}\n`;
       case 'nested':
         return `${iter(node.children, [path]).join('')}`;
+      case 'notUpdated':
+        return '';
+      default:
+        throw new Error('This tree has problem. Please check the tree.');
     }
   });
   const result = `${iter(obj, []).join('')}`;
@@ -34,6 +34,9 @@ export const formatPlain = (obj) => {
     if (index < finalResult.length - 1) {
       return element;
     }
+    return '';
   }, []);
   return answer.join('');
 };
+
+export default formatPlain;
