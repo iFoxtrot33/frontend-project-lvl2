@@ -1,4 +1,6 @@
 import { test, expect } from '@jest/globals';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
 import findDifference from '../src/index.js';
 import {
   stylishResult,
@@ -6,7 +8,10 @@ import {
   jsonFormat,
   resultLines,
 } from '../__fixtures__/result.js';
-import { getFixturePath } from '../src/parser.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+const getFixturePath = (filename) => path.resolve(__dirname, './..', '__fixtures__', filename);
 
 test.each([
   ['file1.json', 'file2.json', 'stylish', stylishResult],
