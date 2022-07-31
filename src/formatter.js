@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import formatter from './stylish.js';
 import formatPlain from './plain.js';
 
