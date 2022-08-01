@@ -24,12 +24,13 @@ const formatPlain = (obj) => {
         case 'nested':
           return `${iter(node.children, [path])}`;
         case 'notUpdated':
-          return '';
+          return null;
         default:
           throw new Error('This tree has problem. Please check the tree.');
       }
     });
-    return result.join('\n');
+    const finalResult = _.compact(result);
+    return finalResult.join('\n');
   };
   return iter(obj, []);
 };

@@ -2,7 +2,7 @@ import _ from 'lodash';
 
 const makeGap = (depth, initialValue = 4) => ' '.repeat(initialValue * depth - 2);
 
-const stringify = (data, depth) => {
+const digger = (data, depth) => {
   if (_.isPlainObject(data) === false) {
     return `${data}`;
   }
@@ -11,32 +11,29 @@ const stringify = (data, depth) => {
   }
   const body = Object
     .entries(data)
-    .map(([key, value]) => `${makeGap(depth + 1)}  ${key}: ${stringify(value, depth + 1)}`);
+    .map(([key, value]) => `${makeGap(depth + 1)}  ${key}: ${digger(value, depth + 1)}`);
   return ['{', ...body, `${makeGap(depth)}  }`].join('\n');
 };
 
 const formatter = (obj) => {
-  const iter = (tree, depth) => {
-    const result = tree.map((node) => {
-      const makeLine = (value, sign) => `${makeGap(depth)}${sign} ${node.key}: ${stringify(value, depth)}`;
-      switch (node.type) {
-        case 'add':
-          return makeLine(node.val, '+');
-        case 'remove':
-          return makeLine(node.val, '-');
-        case 'notUpdated':
-          return makeLine(node.val, ' ');
-        case 'updated':
-          return `${makeLine(node.val1, '-')}\n${makeLine(node.val2, '+')}`;
-        case 'nested':
-          return `${makeGap(depth)}  ${node.key}: {${iter(node.children, depth + 1)} ${makeGap(depth)} }`;
-        default:
-          throw new Error('This tree has problem. Please check the tree.');
-      }
-    });
-    return ['{', ...result, '}'].join('\n');
-  };
-  return iter(obj, 1);
+  const iter = (tree, depth) => tree.map((node) => {
+    const takeValue = (value, sign) => `${makeGap(depth)}${sign} ${node.key}: ${digger(value, depth)}`;
+    switch (node.type) {
+      case 'add':
+        return takeValue(node.val, '+');
+      case 'remove':
+        return takeValue(node.val, '-');
+      case 'notUpdated':
+        return takeValue(node.val, ' ');
+      case 'updated':
+        return `${takeValue(node.val1, '-')}\n${takeValue(node.val2, '+')}`;
+      case 'nested':
+        return `${makeGap(depth)}  ${node.key}: {\n${iter(node.children, depth + 1).join('\n')}\n${makeGap(depth)}  }`;
+      default:
+        throw new Error('This tree has problem. Please check the tree.');
+    }
+  });
+  return `{\n${iter(obj, 1).join('\n')}\n}`;
 };
 
 export default formatter;
