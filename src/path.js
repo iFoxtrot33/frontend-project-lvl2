@@ -1,5 +1,6 @@
 import path from 'path';
+import fs from 'fs';
 
-const buildFullPath = (filename) => path.resolve(process.cwd(), filename);
+export const buildFullPath = (filename) => path.resolve(process.cwd(), filename);
 
-export default buildFullPath;
+export const readFile = (filePath) => fs.readFileSync(filePath, 'utf-8');

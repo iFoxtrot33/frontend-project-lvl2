@@ -17,16 +17,16 @@ const digger = (data, depth) => {
 
 const formatter = (obj) => {
   const iter = (tree, depth) => tree.map((node) => {
-    const takeValue = (value, sign) => `${makeGap(depth)}${sign} ${node.key}: ${digger(value, depth)}`;
+    const makeLine = (value, sign) => `${makeGap(depth)}${sign} ${node.key}: ${digger(value, depth)}`;
     switch (node.type) {
       case 'add':
-        return takeValue(node.val, '+');
+        return makeLine(node.val, '+');
       case 'remove':
-        return takeValue(node.val, '-');
+        return makeLine(node.val, '-');
       case 'notUpdated':
-        return takeValue(node.val, ' ');
+        return makeLine(node.val, ' ');
       case 'updated':
-        return `${takeValue(node.val1, '-')}\n${takeValue(node.val2, '+')}`;
+        return `${makeLine(node.val1, '-')}\n${makeLine(node.val2, '+')}`;
       case 'nested':
         return `${makeGap(depth)}  ${node.key}: {\n${iter(node.children, depth + 1).join('\n')}\n${makeGap(depth)}  }`;
       default:
