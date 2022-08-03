@@ -1,6 +1,6 @@
 import buildTree from './treeBuilder.js';
 import parseFile from './parser.js';
-import { buildFullPath, readFile } from './path.js';
+import { buildFullPath, readFile } from './utils.js';
 import format from './formatters/index.js';
 
 const findDifference = (filepath1, filepath2, type = 'stylish') => {

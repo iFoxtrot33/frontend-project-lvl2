@@ -22,6 +22,7 @@ test.each([
   ['file3.json', 'file2.yml', 'stylish', plainObject],
   ['file1.json', 'file2.json', 'plain', resultLines],
   ['file3.json', 'file4.json', 'json', jsonFormat],
-])('Test(%s, %s, %s)', (a, b, c, expected) => {
-  expect(findDifference(getFixturePath(a), getFixturePath(b), c)).toBe(expected);
+])('Test(%s, %s, %s)', (filePath1, filePath2, format, expected) => {
+  expect(findDifference(getFixturePath(filePath1), getFixturePath(filePath2), format))
+    .toBe(expected);
 });

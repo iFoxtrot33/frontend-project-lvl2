@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const checkComplex = (val) => {
+const formatComplexValue = (val) => {
   if (_.isPlainObject(val) === true) {
     return '[complex value]';
   }
@@ -16,11 +16,11 @@ const formatPlain = (obj) => {
       const path = [...parent, node.key].join('.');
       switch (node.type) {
         case 'add':
-          return `Property '${path}' was added with value: ${checkComplex(node.val)}`;
+          return `Property '${path}' was added with value: ${formatComplexValue(node.val)}`;
         case 'remove':
           return `Property '${path}' was removed`;
         case 'updated':
-          return `Property '${path}' was updated. From ${checkComplex(node.val1)} to ${checkComplex(node.val2)}`;
+          return `Property '${path}' was updated. From ${formatComplexValue(node.val1)} to ${formatComplexValue(node.val2)}`;
         case 'nested':
           return `${iter(node.children, [path])}`;
         case 'notUpdated':
