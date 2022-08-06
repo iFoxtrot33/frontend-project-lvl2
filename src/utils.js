@@ -7,7 +7,7 @@ export const buildFullPath = (filename) => path.resolve(process.cwd(), filename)
 export const readFile = (filePath) => fs.readFileSync(filePath, 'utf-8');
 
 export const fileType = (filePath) => {
-  let result = path.extname(filePath).slice('');
-  result = _.drop(result);
-  return result.join('');
+  const fileTypeWithDot = path.extname(filePath).slice('');
+  const fileTypeWithoutDot = _.drop(fileTypeWithDot);
+  return fileTypeWithoutDot.join('');
 };
