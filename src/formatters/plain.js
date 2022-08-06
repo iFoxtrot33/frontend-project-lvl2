@@ -4,10 +4,13 @@ const formatComplexValue = (val) => {
   if (_.isPlainObject(val) === true) {
     return '[complex value]';
   }
-  if ((val === true) || (val === false) || (val === null) || (typeof val === 'number')) {
+  if ((val === true) || (val === false) || (typeof val === 'number')) {
     return `${val}`;
   }
-  return `'${val}'`;
+  if (typeof val === 'string') {
+    return `'${val}'`;
+  }
+  return null;
 };
 
 const formatPlain = (obj) => {

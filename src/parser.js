@@ -1,15 +1,15 @@
 import yaml from 'js-yaml';
 
-const parseFile = (fileExtension, data) => {
-  switch (fileExtension) {
-    case '.json':
+const parseFile = (fileFormat, data) => {
+  switch (fileFormat) {
+    case 'json':
       return JSON.parse(data);
-    case '.yaml':
+    case 'yaml':
       return yaml.load(data);
-    case '.yml':
+    case 'yml':
       return yaml.load(data);
     default:
-      throw new Error(`'${fileExtension}' is unknown file format. Please use json, yaml or yml files. !`);
+      throw new Error(`'${fileFormat}' is unknown file format. Please use json, yaml or yml files. !`);
   }
 };
 

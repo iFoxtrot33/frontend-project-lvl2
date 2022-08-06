@@ -1,4 +1,3 @@
-import { test, expect } from '@jest/globals';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import findDifference from '../src/index.js';
