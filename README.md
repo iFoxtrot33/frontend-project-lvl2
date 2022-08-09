@@ -9,7 +9,7 @@
 ![Linter workflow](https://github.com/iFoxtrot33/frontend-project-lvl2/actions/workflows/lint.yml/badge.svg)
 ![Tests workflow](https://github.com/iFoxtrot33/frontend-project-lvl2/actions/workflows/tests.yml/badge.svg)
 
-### Instructions:
+### How to use:
 Type gendiff -h for information
 
 ![help](https://user-images.githubusercontent.com/102408798/180901956-9ee193d5-1fb4-4e5b-9174-afcf2c80d671.png)
