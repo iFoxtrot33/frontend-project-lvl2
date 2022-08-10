@@ -13,7 +13,7 @@ const formatComplexValue = (val) => {
   return null;
 };
 
-const formatPlain = (obj) => {
+const formatPlain = (treeOfDifference) => {
   const iter = (tree, parent) => {
     const result = tree.map((node) => {
       const path = [...parent, node.key].join('.');
@@ -32,10 +32,9 @@ const formatPlain = (obj) => {
           throw new Error('This tree has problem. Please check the tree.');
       }
     });
-    const finalResult = _.compact(result);
-    return finalResult.join('\n');
+    return _.compact(result).join('\n');
   };
-  return iter(obj, []);
+  return iter(treeOfDifference, []);
 };
 
 export default formatPlain;

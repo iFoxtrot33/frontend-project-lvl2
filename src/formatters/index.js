@@ -1,14 +1,14 @@
 import formatTree from './stylish.js';
 import formatPlain from './plain.js';
 
-const format = (type, tree) => {
+const format = (type, treeOfDifference) => {
   switch (type) {
     case 'stylish':
-      return formatTree(tree);
+      return formatTree(treeOfDifference);
     case 'plain':
-      return formatPlain(tree);
+      return formatPlain(treeOfDifference);
     case 'json':
-      return JSON.stringify(tree);
+      return JSON.stringify(treeOfDifference);
     default:
       throw new Error(`${type} is wrong format type`);
   }
