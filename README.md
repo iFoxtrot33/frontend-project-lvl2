@@ -33,5 +33,5 @@ To receive string, type:
 -f json filePathName1 filePathName2 
 ![Sample](https://user-images.githubusercontent.com/102408798/180902114-984c29e4-bc5d-415f-84ef-5ee7784dc660.png)
 _______________________________________________________________________
-System requirements:
+### System requirements:
 Linux or Mac OS 
