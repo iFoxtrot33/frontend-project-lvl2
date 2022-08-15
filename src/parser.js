@@ -9,7 +9,7 @@ const parseFile = (fileFormat, data) => {
     case 'yml':
       return yaml.load(data);
     default:
-      throw new Error(`'${fileFormat}' is unknown file format. Please use json, yaml or yml files. !`);
+      throw new Error(`'${fileFormat}' is unknown file format. Please use json, yaml or yml files!`);
   }
 };
 

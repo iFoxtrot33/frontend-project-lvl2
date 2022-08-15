@@ -3,7 +3,6 @@ import { fileURLToPath } from 'url';
 import findDifference from '../src/index.js';
 import {
   stylishResult,
-  plainObject,
   jsonFormat,
   resultLines,
 } from '../__fixtures__/result.js';
@@ -14,14 +13,17 @@ const getFixturePath = (filename) => path.resolve(__dirname, './..', '__fixtures
 
 test.each([
   ['file1.json', 'file2.json', 'stylish', stylishResult],
-  ['file1.yaml', 'file2.yaml', 'stylish', plainObject],
-  ['file1.yml', 'file2.yml', 'stylish', plainObject],
-  ['file1.yaml', 'file2.yml', 'stylish', plainObject],
-  ['file3.json', 'file2.yaml', 'stylish', plainObject],
-  ['file3.json', 'file2.yml', 'stylish', plainObject],
   ['file1.json', 'file2.json', 'plain', resultLines],
   ['file3.json', 'file4.json', 'json', jsonFormat],
 ])('Test(%s, %s, %s)', (filePath1, filePath2, format, expected) => {
   expect(findDifference(getFixturePath(filePath1), getFixturePath(filePath2), format))
     .toBe(expected);
+});
+
+test('Default test', () => {
+  expect(() => findDifference(
+    getFixturePath('file1.txt'),
+    getFixturePath('file2.json'),
+    stylishResult,
+  )).toThrow(Error);
 });
