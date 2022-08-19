@@ -22,10 +22,14 @@ test.each([
     .toBe(expected);
 });
 
-test('Default test', () => {
+test('Default style value', () => {
+  expect(findDifference(getFixturePath('file1.json'), getFixturePath('file2.yaml')))
+    .toBe(stylishResult);
+});
+
+test('Wrong type of file', () => {
   expect(() => findDifference(
     getFixturePath('file1.txt'),
     getFixturePath('file2.json'),
-    stylishResult,
   )).toThrow(Error);
 });

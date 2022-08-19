@@ -15,7 +15,7 @@ const stringify = (data, depth) => {
   return ['{', ...body, `${makeGap(depth)}  }`].join('\n');
 };
 
-const formatTree = (obj) => {
+const formatTree = (initialTree) => {
   const iter = (tree, depth) => tree.map((node) => {
     const makeLine = (value, sign) => `${makeGap(depth)}${sign} ${node.key}: ${stringify(value, depth)}`;
     switch (node.type) {
@@ -33,7 +33,7 @@ const formatTree = (obj) => {
         throw new Error('This tree has problem. Please check the tree.');
     }
   });
-  return `{\n${iter(obj, 1).join('\n')}\n}`;
+  return `{\n${iter(initialTree, 1).join('\n')}\n}`;
 };
 
 export default formatTree;
