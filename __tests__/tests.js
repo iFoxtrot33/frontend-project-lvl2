@@ -13,6 +13,8 @@ const getFixturePath = (filename) => path.resolve(__dirname, './..', '__fixtures
 
 test.each([
   ['file1.json', 'file2.json', 'stylish', stylishResult],
+  ['file1.yaml', 'file2.yml', 'stylish', stylishResult],
+  ['file1.json', 'file2.yml', 'stylish', stylishResult],
   ['file1.json', 'file2.json', 'plain', resultLines],
   ['file3.json', 'file4.json', 'json', jsonFormat],
 ])('Test(%s, %s, %s)', (filePath1, filePath2, format, expected) => {
