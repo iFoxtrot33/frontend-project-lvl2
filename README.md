@@ -20,9 +20,10 @@ This is the files difference finder. You enter file paths for two files and the 
 ![Tests workflow](https://github.com/iFoxtrot33/frontend-project-lvl2/actions/workflows/tests.yml/badge.svg)
 
 ## 🛠Stack:
--JavaScript
--Commander
--Jest
+- JavaScript
+- Commander
+- Jest
+- Lodash
 
 ## 📃Instructions:
 Type gendiff -h for information
