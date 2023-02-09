@@ -19,6 +19,11 @@ This is the files difference finder. You enter file paths for two files and the 
 ![Linter workflow](https://github.com/iFoxtrot33/frontend-project-lvl2/actions/workflows/lint.yml/badge.svg)
 ![Tests workflow](https://github.com/iFoxtrot33/frontend-project-lvl2/actions/workflows/tests.yml/badge.svg)
 
+## 🛠Stack:
+-JavaScript
+-Commander
+-Jest
+
 ## 📃Instructions:
 Type gendiff -h for information
 
