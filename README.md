@@ -1,9 +1,9 @@
 # 🗂️Files difference finder
 
 ## ℹAbout:
-This is the files difference finder. You enter file paths for two files and the program generate difference. This is a console app.
+This is the file difference finder. You enter file paths for two files and the program generates a difference. This is a console app.
 
-## 💻To deploy localy:
+## 💻To deploy locally:
 ```
 1)git clone
 2)cd frontend-project-lvl2
